@@ -1,6 +1,6 @@
 from Service.verify_options import verify_options
-from Personage.Group.warrior import Warrior
-from Template.battle import battle
+from Personage.Group import Warrior
+from Template import BattleTemplate
 
 # is_user = input("""
 # Criar personagem?
@@ -25,47 +25,22 @@ def main_menu():
 
     Escolha uma opção: """)
 
-    if verify_options(int(option), 6):
+    if verify_options(option, 6):
         options = {
-            '1': battle(personage),
+            '1': BattleTemplate.battle(personage),
             '2': 0,
             '3': 0,
             '4': 0,
             '5': 0,
-            '6': 0,
+            '6': 0
         }
 
         options[option]
 
+        main_menu()
+
+    else:
+        print('\n\n    Escolha uma opção válida...\n')
+        main_menu()
+
 main_menu()
-
-personage.update_atributes()
-
-personage.upgrade_level(2000)
-
-personage.add_quantity_atribute([20, 5, 15])
-personage.update_atributes()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Vai ser usado pra distribuir atributos
-# a = '1,   4 ,,7'
-# ass = a.split(',')
-# new = []
-# for a in ass:
-#     if bool(a) is False:
-#         new.append(0)
-#     else:
-#         new.append(int(a))

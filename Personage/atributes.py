@@ -4,6 +4,7 @@ class PersonageAtributes:
         self.name = name
         self.sex = sex
         self.level = 1
+        self.total_xp = 0
         self.max_xp = 50
         self.xp = 0
         self.atributes_points = 0

@@ -1,19 +1,13 @@
-from Personage.Group.warrior import Warrior
+from Personage.Group import Warrior
 
-def battle(personage: Warrior) -> None:
-    atual_level = personage.level
+from .level import LevelTemplate
 
-    personage.upgrade_level(100)
+class BattleTemplate:
 
-    if atual_level != personage.level:
-        
-        print(f"""
-    Parabéns você subiu para o nível {personage.level}!
-    Falta {personage.max_xp - personage.xp} para o próximo nível.
-    """)
+    @staticmethod
+    def battle(personage: Warrior) -> None:
+        atual_level = personage.level
+        personage.upgrade_level(100)
 
-        input(f"""
-    Você tem {personage.atributes_points} pontos disponíveis
-        
-        
-        """)
+        if atual_level > personage.level:
+            LevelTemplate.level_up(personage)
