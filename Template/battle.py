@@ -7,7 +7,7 @@ class BattleTemplate:
     @staticmethod
     def battle(personage: Warrior) -> None:
         atual_level = personage.level
-        personage.upgrade_level(100)
+        personage.upgrade_level(500)
 
-        if atual_level > personage.level:
+        if atual_level < personage.level:
             LevelTemplate.level_up(personage)
