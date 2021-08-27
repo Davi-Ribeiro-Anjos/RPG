@@ -1,4 +1,6 @@
-from Personage.basic_functions import PersonageFunction
+from Service.verify_options import verify_options
+from Personage.Group.warrior import Warrior
+from Template.battle import battle
 
 # is_user = input("""
 # Criar personagem?
@@ -7,23 +9,63 @@ from Personage.basic_functions import PersonageFunction
 
 # Escolha uma opção: """)
 
-# main_menu = input("""
-# Menu principal:
+personage = Warrior('Davi', 'Masculino')
 
-# 1. Batalhar
-# 2. Ver atributos
-# 3. Ver equipamentos
-# 4. Ver inventário
-# 5. Sair
+def main_menu():
 
-# Escolha uma opção: """)
+    option = input("""
+    Menu principal:
 
-personage = PersonageFunction('Davi', 'Masculino')
+    1. Batalhar
+    2. Ver atributos
+    3. Ver equipamentos
+    4. Ver inventário
+    5. Configuração
+    6. Sair e Salvar
 
-damage = 110
-personage.calculate_damage(damage)
-# print(f'Você perdeu {damage - personage.armor} de vida, lhe resta {personage.life}!')
+    Escolha uma opção: """)
 
-personage.eat()
-personage.is_upgrade(2000)
+    if verify_options(int(option), 6):
+        options = {
+            '1': battle(personage),
+            '2': 0,
+            '3': 0,
+            '4': 0,
+            '5': 0,
+            '6': 0,
+        }
 
+        options[option]
+
+main_menu()
+
+personage.update_atributes()
+
+personage.upgrade_level(2000)
+
+personage.add_quantity_atribute([20, 5, 15])
+personage.update_atributes()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Vai ser usado pra distribuir atributos
+# a = '1,   4 ,,7'
+# ass = a.split(',')
+# new = []
+# for a in ass:
+#     if bool(a) is False:
+#         new.append(0)
+#     else:
+#         new.append(int(a))
