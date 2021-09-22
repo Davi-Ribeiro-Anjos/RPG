@@ -17,15 +17,20 @@ class LevelTemplate:
         3. Agilidade: + 0.5% de crítico, + 5 velocidade.
         
              V,P,A 
-    Exemplo: 0,3,2
+    Exemplo: 0,3,2      (caso tenha 5 pontos disponíveis) 
     Como deseja distribuir os pontos? : """)
 
             LevelServices.add_atributes(personage, points)
 
-        except:
-            print("""
-    /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-    Escolha os atributos com base no exemplo""")
+        except SyntaxError:
+            input("""
+    Escolha os atributos com base no exemplo.""")
+
+            LevelTemplate.level_up(personage)
+        
+        except ValueError as e:
+            input(f"""
+    Você tentou adicionar {e.args[0] - e.args[1]} pontos além do disponível.""")
 
             LevelTemplate.level_up(personage)
 

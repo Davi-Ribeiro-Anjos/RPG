@@ -12,5 +12,7 @@ class Warrior(PersonageFunction):
         self.armor = 50 + self.distribute_points('vitality', 'armor')
         self.max_mana = 50 + self.distribute_points('power', 'mana')
         self.damage = 75 + self.distribute_points('power', 'damage')
-        self.critic_damage = 2
+        self.chance_critic = 0 + self.distribute_points('agility', 'chance_critic')
+        self.damage_critic = 2
+        self.speed = 100 + self.distribute_points('agility', 'speed')
         self.life_steal = 0

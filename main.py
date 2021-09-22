@@ -40,7 +40,7 @@ def main_menu():
         main_menu()
 
     else:
-        print('\n\n    Escolha uma opção válida...\n')
+        input('\n    Escolha uma opção válida...')
         main_menu()
 
 main_menu()

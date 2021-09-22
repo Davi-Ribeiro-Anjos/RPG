@@ -12,5 +12,5 @@ class Mage(PersonageFunction):
         self.armor = 35 + self.distribute_points('vitality', 'armor')
         self.max_mana = 100 + self.distribute_points('power', 'mana')
         self.damage = 100 + self.distribute_points('power', 'damage')
-        self.critic_damage = 2
+        self.damage_critic = 2
         self.life_steal = 0

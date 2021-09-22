@@ -19,7 +19,7 @@ class PersonageAtributes:
         self.max_mana = 0
         self.mana = self.max_mana
         self.damage = 0
-        self.critic_damage = 2
+        self.damage_critic = 2
         self.chance_critic = 0
         self.armor = 0
         self.speed = 0
@@ -52,3 +52,5 @@ class PersonageAtributes:
             self.quantity['vitality'] += list_quantity[0]
             self.quantity['power'] += list_quantity[1]
             self.quantity['agility'] += list_quantity[2]
+        else:
+            raise ValueError(total_points, self.atributes_points)
