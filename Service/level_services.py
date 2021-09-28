@@ -1,4 +1,4 @@
-from Personage.Group import Warrior
+from Class.Classes import Warrior
 
 class LevelServices:
 

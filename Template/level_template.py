@@ -1,6 +1,6 @@
 from Service import LevelServices
 
-from Personage.Group import Warrior
+from Class.Classes import Warrior
 
 class LevelTemplate:
 
@@ -36,8 +36,11 @@ class LevelTemplate:
 
     @staticmethod
     def current_level(personage: Warrior) -> str:
-        print(f"""
+        input(f"""
     Você está no nível {personage.level}!
-    Sua quantidade total de xp é de {personage.total_xp}...
     Quantidade de xp atual é de {personage.xp}, falta {personage.max_xp - personage.xp} para o próximo nível.
+    Seus atributos:
+    Vida Máxima: {personage.max_life}      Vida: {personage.life}      Armadura: {personage.armor}   
+    Mana Máxima: {personage.max_mana}      Mana: {personage.mana}      Dano: {personage.damage}
+    Velocidade: {personage.speed}
     """)

@@ -1,6 +1,6 @@
-from .atributes import PersonageAtributes
+from .combat_functions import CombatFunctionClass
 
-class PersonageFunction(PersonageAtributes):
+class LevelFunctionClass(CombatFunctionClass):
 
     def __init__(self, name, sex) -> None:
         super().__init__(name, sex)
@@ -9,7 +9,7 @@ class PersonageFunction(PersonageAtributes):
         if (received_xp + self.xp) >= self.max_xp:
             self.xp = received_xp + self.xp - self.max_xp
             self.atributes_points += 5
-            self.max_xp += 50
+            self.max_xp += 100
             self.total_xp += received_xp
             self.level += 1
 
@@ -17,27 +17,18 @@ class PersonageFunction(PersonageAtributes):
     
     def regen_life_mana(self):
         self.life += self.max_life * 0.2
-        if self.life > self.max_life:
-            self.life = self.max_life
-
         self.mana += self.max_mana * 0.2
-        if self.mana > self.max_mana:
-            self.mana = self.max_mana
 
-    def is_dead(self) -> None:
-        if self.life <= 0:
-            self.is_live = False
-            self.xp = 0
-            self.gold = 0
-    
-    def calculate_damage(self, damage: int) -> None:
-        self.life -= damage - self.armor
+        self.verify_life_mana()
         
     def eat(self) -> None:
         self.life += 25
         self.mana += 10
         self.bag['food'] -= 1
 
+        self.verify_life_mana()
+
+    def verify_life_mana(self):
         if self.life > self.max_life:
             self.life = self.max_life
 

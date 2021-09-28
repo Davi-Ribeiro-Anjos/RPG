@@ -1,15 +1,13 @@
 from Service.verify_options import verify_options
-from Personage.Group import Warrior
-from Template import BattleTemplate
 
-# is_user = input("""
-# Criar personagem?
-# 1. Sim
-# 2. Não
+from Template import CombatTemplate, LevelTemplate
 
-# Escolha uma opção: """)
+from Class.Classes import Warrior
+from Enemy.basic_enemy import FirstEnemy
+
 
 personage = Warrior('Davi', 'Masculino')
+personage.update_atributes()
 
 def main_menu():
 
@@ -27,15 +25,15 @@ def main_menu():
 
     if verify_options(option, 6):
         options = {
-            '1': BattleTemplate.battle(personage),
-            '2': 0,
+            '1': lambda : CombatTemplate.battle(personage, FirstEnemy('Lobo')),
+            '2': lambda : LevelTemplate.current_level(personage),
             '3': 0,
             '4': 0,
             '5': 0,
             '6': 0
         }
 
-        options[option]
+        options[option]()
 
         main_menu()
 
