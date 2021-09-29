@@ -1,4 +1,4 @@
-from Class.Classes import Warrior
+from Class.ClassDefault import DefaultClass
 from Enemy.basic_enemy import FirstEnemy
 
 from .level_template import LevelTemplate
@@ -6,7 +6,7 @@ from .level_template import LevelTemplate
 class CombatTemplate:
 
     @staticmethod
-    def battle(personage: Warrior, enemy: FirstEnemy) -> None:
+    def battle(personage: DefaultClass, enemy: FirstEnemy) -> None:
         atual_level = personage.level
         round_personage, round_enemy = 0, 0
         speed_personage, speed_enemy = 0, 0

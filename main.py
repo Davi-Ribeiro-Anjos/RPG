@@ -16,7 +16,7 @@ def main_menu():
 
     1. Batalhar
     2. Ver atributos
-    3. Ver equipamentos
+    3. Distribuir atributos
     4. Ver inventário
     5. Configuração
     6. Sair e Salvar
@@ -26,8 +26,8 @@ def main_menu():
     if verify_options(option, 6):
         options = {
             '1': lambda : CombatTemplate.battle(personage, FirstEnemy('Lobo')),
-            '2': lambda : LevelTemplate.current_level(personage),
-            '3': 0,
+            '2': lambda : LevelTemplate.view_atributes(personage),
+            '3': lambda : LevelTemplate.distribution_points(personage),
             '4': 0,
             '5': 0,
             '6': 0

@@ -1,6 +1,6 @@
-from ..ClassDefault import LevelFunctionClass
+from ..ClassDefault import DefaultClass
 
-class Mage(LevelFunctionClass):
+class Mage(DefaultClass):
 
     def __init__(self, name, sex) -> None:
         super().__init__(name, sex)

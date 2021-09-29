@@ -1,1 +1,1 @@
-from .level_functions import LevelFunctionClass
+from .default import DefaultClass

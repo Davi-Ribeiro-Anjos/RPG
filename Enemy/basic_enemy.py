@@ -4,10 +4,10 @@ class FirstEnemy():
     def __init__(self, name) -> None:
         self.name = name
         self.xp = 5000
-        self.max_life = 150
+        self.max_life = 50
         self.life = self.max_life
-        self.armor = 25
-        self.damage = 10
+        self.armor = 0
+        self.damage = 150
         self.speed = 150
         self.is_live = True
 

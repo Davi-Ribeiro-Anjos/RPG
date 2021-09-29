@@ -9,8 +9,8 @@ class AtributeFunctionClass(AtributeClass):
     def distribute_points(self, type: str, atribute: str) -> int:
         atributes = {
             'vitality': {'life': 25, 'armor': 5},
-            'power': {'damage': 10, 'mana': 5},
-            'agility': {'chance_critic': 0.005, 'speed': 5}
+            'power': {'damage': 5, 'mana': 10},
+            'agility': {'chance_critic': 0.0025, 'speed': 5}
         }
 
         return atributes[type][atribute] * self.quantity[type]
